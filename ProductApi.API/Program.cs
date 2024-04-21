@@ -1,3 +1,5 @@
+using ProductApi.Business.Abstract;
+using ProductApi.Business.Concrete;
 using ProductApi.DataAccess.Abstract;
 using ProductApi.DataAccess.Concrete;
 
@@ -11,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+builder.Services.AddScoped<IProductService,ProductManager>();
 
 var app = builder.Build();
 
